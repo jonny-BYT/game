@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jonny's Unblocked Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background: #222;
+      padding: 20px 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav {
+      margin: 20px;
+    }
+
+    .button {
+      background: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+
+    .button:hover {
+      background: #666;
+    }
+
+    iframe {
+      width: 90%;
+      height: 500px;
+      margin-top: 20px;
+      border: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>Jonny's Unblocked Games</header>
+
+  <nav>
+    <button class="button" onclick="showGame('game1')">Dino Game</button>
+    <button class="button" onclick="showGame('game2')">Slope Game</button>
+    <button class="button" onclick="showGame('game3')">Tetris</button>
+  </nav>
+
+  <div id="game1" class="game hidden">
+    <iframe src="https://chromedino.com" title="Dino Game"></iframe>
+  </div>
+
+  <div id="game2" class="game hidden">
+    <iframe src="https://slopegame.io/fullscreen" title="Slope Game"></iframe>
+  </div>
+
+  <div id="game3" class="game hidden">
+    <iframe src="https://freetetris.org/game.php" title="Tetris"></iframe>
+  </div>
+
+  <script>
+    function showGame(id) {
+      document.querySelectorAll('.game').forEach(g => g.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
